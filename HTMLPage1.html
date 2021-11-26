@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>作業-個人履歷</title>
+    <link rel="stylesheet"  href="my.css">
+</head>
+    
+<body>
+    
+    <a href="#1"><img src="switch.png"/></a>
+    <h1 id="myName">姓名:洪丞威 S07352037</h1>
+
+    <h2>興趣:</h2>
+    <ol>
+
+    </ol>
+    <ul id="1">
+        <li>
+            恐怖電影、漫畫
+        </li>
+        <li>
+            滑板
+        </li>
+        <li>
+            嘻哈音樂
+            <ol>
+                <li>Boombap</li>
+                <li>LoFi</li>
+                <li>Melody</li>
+            </ol>
+        </li>
+        <li>
+            研究穿搭打扮
+            <ol>
+                <li>復古</li>
+                <li>街頭</li>
+            </ol>
+        </li>
+        <li>
+            PC遊戲
+            <ol>
+                <li>FPS</li>
+                <li>RPG</li>
+            </ol>
+        </li>
+        
+    </ul>
+    <h2>簡歷</h2>
+    <p>
+        <ul>
+            <li>
+                學習過最有印象科目、內容或完成的作品
+                <ol>
+                    <li>AI電腦視覺應用實作:<em>神經網路如何構成</em><br />這是第一次接觸到有關神經網路的課程，從最原始的影像開始，介紹各種圖形的濾波器，最後再結合神經網路的結構，最後實作了YOLOV3的影像辨識，讓我對影像以及影像處理辨識這方面有了很大的興趣。</li>
+                    
+                    <li>數位創新實作:<em>Unity使用九軸感測器結合運動排球遊戲</em><br />在期末專題的部分我與我的組員們設計了將早期的網頁皮卡球打排球改良為3D版，並且讓使用者能穿戴配有九軸感測器的手環進行體感遊戲。</li>
+                    <li>大學畢業專題:<em>基於人工智慧的滑板姿勢矯正系統</em><br />第一次花了半年以上的時間做一件自己很有熱情的事情，從一開始的發想，以及各種研究，最後再完成的結果是我在大學感到最深刻印象的成果。</li>
+                </ol>
+            </li>
+            <li>
+                團隊合作完成的事
+                <ol>
+                    <li>畢業專題<br/><u>從一開始的沒有方向</u>，到最後完成整個的結果，五個人都付出了非常多心血，各自都有自己個負責內容，且都能尊重包容每人的意見，是我大學期間團隊合作最好的一次。</li>
+                    <li>滑板社團經營<br/>在大學期間，接觸到了滑板並且愛上這個文化，且在社團裡遇到許多非常要好的朋友們，<em style="color: red;">在大三期間有機會當上了社團幹部，並且從不太敢社交的個性慢慢的成長，每次的活動規劃都是很難忘的回憶</em>，雖然當幹部時有些許的意見不合，但在整個過程中學習到了很多，也學會了領導、教學能力。</li>
+                </ol>
+            </li>
+            
+        </ul>
+        
+    </p>
+    <h2>未來目標</h2>
+    <table id="future" >
+        <thead>
+            <tr>
+                <th>學科名稱</th>
+                <th>內容</th>
+                <th>學科名稱</th>
+                <th>內容</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>網頁前後端整合</td>
+                <td>了解一個網頁前端工程師與後端工程師該如何溝通整合</td>
+                <td>UI/UX設計</td>
+                <td>了解使用者的需求，優化用戶體驗，並設計出使用者想要的介面</td>
+            </tr>
+            <tr>
+                <td>數位學習設計</td>
+                <td>如何將資訊融入教學、電腦輔助學習的設計方法</td>
+                <td>Python-影像神經網路應用</td>
+                <td>將DCGAN、GAN、UNet等神經網路往影像應用發展</td>
+            </tr>
+            <tr>
+                <td>物聯網應用</td>
+                <td>學習雲端系統架設，並嘗試使用各種物聯網協定進行溝通。Ex:MQTT、TCP、UDP等</td>
+                <td>VR、AR實作</td>
+                <td>學習如何使用VR、AR，並將其應用於線上教學軟體</td>
+            </tr>
+        </tbody>
+    </table>
+	<p>
+    <button id="switchColor" type="button">用class切換顏色</button>
+    <button id="showDiv" type="button">顯示Div</button>
+    <button id="removeDiv" type="button">移除Div</button>
+</p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(function() {
+        /*不建議直接操作css(style), 應用class(https://www.w3schools.com/jquery/jquery_css_classes.asp)*/
+        $('#switchColor').click(function() {
+            $("#myName").toggleClass("blue");
+        });
+        $('#showDiv').click(function() {
+            let mySkill = ["滑板", "唱歌", "python程式設計", "Unity遊戲設計", "NXT程式設計"];
+            let mySkillStr = "<div class=\"myDiv\"><h2>技能</h2><ul>";
+            for (let s of mySkill) {
+                mySkillStr += "<li>" + s + "</li>";
+            }
+            mySkillStr += "</ul></div>";
+            $(mySkillStr).insertAfter("#future");
+        });
+        $('#removeDiv').click(function() {
+            //alert($("#myTable ~ .myDiv").length);
+            //console.log($("#myTable ~ .myDiv").length);
+            $("#future ~ .myDiv:first").remove();
+        });
+    });
+</script>
+
+</body>
+</html>

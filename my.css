@@ -1,0 +1,26 @@
+﻿body
+{
+    
+}
+#future {
+    border: 3px #6A5ACD solid;
+    padding: 5px;
+    border-collapse: collapse;
+    font-family: Consolas, 微軟正黑體;
+}
+th, td {
+    border: 1px solid #800080;
+    border-collapse: collapse;
+    font-family: Consolas, 微軟正黑體;
+    text-align: center;
+}
+th {
+    background-color: #F0FFFF;
+}
+em{
+	color: red;
+	
+}
+.blue {
+  color: blue;
+}
